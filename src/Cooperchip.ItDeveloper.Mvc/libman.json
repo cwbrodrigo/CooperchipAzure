@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "defaultDestination": "wwwroot/bundle/",
+  "libraries": [
+    {
+      "library": "jquery@2.1.1",
+      "files": [ "jquery.js", "jquery.min.js" ]
+    }
+  ,
+{
+  "provider": "cdnjs",
+  "library": "jquery-ajax-unobtrusive@3.2.6",
+  "destination": "wwwroot/jquery-ajax-unobtrusive/",
+  "files": [
+    "jquery.unobtrusive-ajax.js"
+  ]
+}
+]
+}

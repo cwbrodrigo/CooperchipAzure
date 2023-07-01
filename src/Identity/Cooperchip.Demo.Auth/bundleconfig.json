@@ -1,0 +1,109 @@
+[
+  {
+    "outputFileName": "wwwroot/bootstrap/js/bootstrap.min.js",
+    "inputFiles": [
+      "wwwroot/bootstrap/js/bootstrap.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/datatable/js/datatable.min.js",
+    "inputFiles": [
+      "wwwroot/datatable/js/datatable.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/jqueryui/jquery-ui.min.js",
+    "inputFiles": [
+      "wwwroot/jqueryui/jquery-ui.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/jquery/jquery.min.js",
+    "inputFiles": [
+      "wwwroot/jquery/jquery.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/MinifiedCss/bootstrap.min.css",
+    "inputFiles": [
+      "wwwroot/bootstrap/css/bootstrap.css",
+      "wwwroot/bootstrap/css/bootstrap-grid.css",
+      "wwwroot/bootstrap/css/bootstrap-reboot.css",
+      "wwwroot/bootstrap/css/bootstrap-utilities.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/MinifiedCss/datatable.min.css",
+    "inputFiles": [
+      "wwwroot/datatable/css/datatable.css",
+      "wwwroot/datatable/css/datatable-bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/MinifiedCss/jquery-ui.min.css",
+    "inputFiles": [
+      "wwwroot/jqueryui/themes/base/jquery-ui.css",
+      "wwwroot/jqueryui/themes/base/theme.css",
+      "wwwroot/jqueryui/themes/black-tie/jquery-ui.css",
+      "wwwroot/jqueryui/themes/black-tie/theme.css",
+      "wwwroot/jqueryui/themes/blitzer/jquery-ui.css",
+      "wwwroot/jqueryui/themes/blitzer/theme.css",
+      "wwwroot/jqueryui/themes/cupertino/jquery-ui.css",
+      "wwwroot/jqueryui/themes/cupertino/theme.css",
+      "wwwroot/jqueryui/themes/dark-hive/jquery-ui.css",
+      "wwwroot/jqueryui/themes/dark-hive/theme.css",
+      "wwwroot/jqueryui/themes/dot-luv/jquery-ui.css",
+      "wwwroot/jqueryui/themes/dot-luv/theme.css",
+      "wwwroot/jqueryui/themes/eggplant/jquery-ui.css",
+      "wwwroot/jqueryui/themes/eggplant/theme.css",
+      "wwwroot/jqueryui/themes/excite-bike/jquery-ui.css",
+      "wwwroot/jqueryui/themes/excite-bike/theme.css",
+      "wwwroot/jqueryui/themes/flick/jquery-ui.css",
+      "wwwroot/jqueryui/themes/flick/theme.css",
+      "wwwroot/jqueryui/themes/hot-sneaks/jquery-ui.css",
+      "wwwroot/jqueryui/themes/hot-sneaks/theme.css",
+      "wwwroot/jqueryui/themes/humanity/jquery-ui.css",
+      "wwwroot/jqueryui/themes/humanity/theme.css",
+      "wwwroot/jqueryui/themes/le-frog/jquery-ui.css",
+      "wwwroot/jqueryui/themes/le-frog/theme.css",
+      "wwwroot/jqueryui/themes/mint-choc/jquery-ui.css",
+      "wwwroot/jqueryui/themes/mint-choc/theme.css",
+      "wwwroot/jqueryui/themes/overcast/jquery-ui.css",
+      "wwwroot/jqueryui/themes/overcast/theme.css",
+      "wwwroot/jqueryui/themes/pepper-grinder/jquery-ui.css",
+      "wwwroot/jqueryui/themes/pepper-grinder/theme.css",
+      "wwwroot/jqueryui/themes/redmond/jquery-ui.css",
+      "wwwroot/jqueryui/themes/redmond/theme.css",
+      "wwwroot/jqueryui/themes/smoothness/jquery-ui.css",
+      "wwwroot/jqueryui/themes/smoothness/theme.css",
+      "wwwroot/jqueryui/themes/south-street/jquery-ui.css",
+      "wwwroot/jqueryui/themes/south-street/theme.css",
+      "wwwroot/jqueryui/themes/start/jquery-ui.css",
+      "wwwroot/jqueryui/themes/start/theme.css",
+      "wwwroot/jqueryui/themes/sunny/jquery-ui.css",
+      "wwwroot/jqueryui/themes/sunny/theme.css",
+      "wwwroot/jqueryui/themes/swanky-purse/jquery-ui.css",
+      "wwwroot/jqueryui/themes/swanky-purse/theme.css",
+      "wwwroot/jqueryui/themes/trontastic/jquery-ui.css",
+      "wwwroot/jqueryui/themes/trontastic/theme.css",
+      "wwwroot/jqueryui/themes/ui-darkness/jquery-ui.css",
+      "wwwroot/jqueryui/themes/ui-darkness/theme.css",
+      "wwwroot/jqueryui/themes/ui-lightness/jquery-ui.css",
+      "wwwroot/jqueryui/themes/ui-lightness/theme.css",
+      "wwwroot/jqueryui/themes/vader/jquery-ui.css",
+      "wwwroot/jqueryui/themes/vader/theme.css"
+    ]
+  }
+]
