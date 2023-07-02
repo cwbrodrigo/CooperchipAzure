@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{117C119C-C60C-43C0-9B71-5F34644E0ED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooperchip.ItDeveloper.Mvc", "src\Cooperchip.ItDeveloper.Mvc\Cooperchip.ItDeveloper.Mvc.csproj", "{21A35EB8-CBF5-453D-A41D-7390A4298406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cooperchip.ItDeveloper.Mvc", "src\Cooperchip.ItDeveloper.Mvc\Cooperchip.ItDeveloper.Mvc.csproj", "{21A35EB8-CBF5-453D-A41D-7390A4298406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
