@@ -1,10 +1,10 @@
 ﻿@* Bundle  firstpage *@
-<script src="/js/libs/jquery-2.1.1.min.js"></script>
-<script src="/Scripts/jquery-ui-1.11.2.min.js"></script>
-<script src="/bundle/core.min.js"></script>
-
+@* <script src="/js/libs/jquery-2.1.1.min.js"></script>
+<script src="/Scripts/jquery-ui-1.11.2.min.js"></script> *@
+<script src="~/bundle/jquery.js"></script>
+<script src="~/bundle/jquery.min.js"></script>
 <!-- Core plugins ( not remove ) -->
-<!-- Handle responsive view functions -->
+<!-- Handle responsive view functions -->LL
 <!-- Custom scroll for sidebars,tables and etc. -->
 <!-- Remove click delay in touch -->
 <!-- Increase jquery animation speed -->
@@ -16,13 +16,15 @@
 @* bundle allpages e core *@
 <script src="/bundle/allpages.min.js"></script>
 
-<script src="/plugins/charts/sparklines/jquery.sparkline.min.js"></script>
+<script src="/bundle/core.min.js"></script>
+
+@* <script src="/plugins/charts/sparklines/jquery.sparkline.min.js"></script> *@
 
 
 <!-- Other plugins ( load only nessesary plugins for every page) -->
 <script src="/js/libs/date.js"></script>
 
-
+<script src="~/bundle/dashboard.min.js"></script>
 <!-- Other plugins ( load only nessesary plugins for every page) -->
 <script src="/plugins/forms/fancyselect/fancySelect.js"></script>
 <script src="/Scripts/select2.js"></script>
