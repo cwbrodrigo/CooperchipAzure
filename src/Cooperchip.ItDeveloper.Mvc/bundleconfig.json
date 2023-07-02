@@ -1,6 +1,6 @@
 [
   {
-    "outputFileName": "wwwroot/bundle/jquery.js",
+    "outputFileName": "wwwroot/bundle/jquery.min.js",
     "inputFiles": [
       "wwwroot/js/libs/jquery-2.1.1.min.js",
       "wwwroot/Scripts/jquery-ui-1.11.2.min.js",
@@ -23,14 +23,13 @@
   {
     "outputFileName": "wwwroot/bundle/core.min.js",
     "inputFiles": [
-      "wwwroot/Scripts/bootstrap.js",
+      "wwwroot/js/bootstrap/bootstrap.js",
       "wwwroot/js/libs/modernizr.custom.js",
-      "wwwroot/js/libs/respond.min.js",
-      "wwwroot/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js",
       "wwwroot/plugins/core/slimscroll/jquery.slimscroll.js",
+      "wwwroot/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js",
       "wwwroot/plugins/core/fastclick/fastclick.js",
-      "wwwroot/plugins/core/quicksearch/jquery.quicksearch.js",
       "wwwroot/plugins/core/velocity/jquery.velocity.min.js",
+      "wwwroot/plugins/core/quicksearch/jquery.quicksearch.js",
       "wwwroot/plugins/ui/bootbox/bootbox.js"
     ]
   },
