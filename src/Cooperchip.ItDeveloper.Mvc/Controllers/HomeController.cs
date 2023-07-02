@@ -23,6 +23,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View();
         }
 
+
         public IActionResult Privacy()
         {
             return View();
