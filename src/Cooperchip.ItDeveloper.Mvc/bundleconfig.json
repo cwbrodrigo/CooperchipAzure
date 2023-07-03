@@ -79,12 +79,4 @@
       "wwwroot/css/custom.css"
     ]
   }
-  //{
-  //  "outputFileName": "wwwroot/bundle/jqueri.min.js",
-  //  "inputFiles": [
-  //    "wwwroot/js/libs/jquery-2.1.1.min.js",
-  //    "wwwroot/Scripts/jquery-ui-1.11.2.min.js",
-  //    "wwwroot/js/jRespond.min.js"
-  //  ]
-  //}
 ]
