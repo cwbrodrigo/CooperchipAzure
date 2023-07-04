@@ -23,12 +23,11 @@
   {
     "outputFileName": "wwwroot/bundle/core.min.js",
     "inputFiles": [
-      "wwwroot/Scripts/bootstrap.js",
+      "wwwroot/bootstrap/js/bootstrap.js",
       "wwwroot/js/libs/modernizr.custom.js",
       "wwwroot/js/libs/respond.min.js",
       "wwwroot/plugins/core/slimscroll/jquery.slimscroll.js",
       "wwwroot/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js",
-      "wwwroot/plugins/core/fastclick/fastclick.js",
       "wwwroot/plugins/core/velocity/jquery.velocity.min.js",
       "wwwroot/plugins/core/quicksearch/jquery.quicksearch.js",
       "wwwroot/plugins/ui/bootbox/bootbox.js"
@@ -77,6 +76,12 @@
       "wwwroot/css/main.css",
       "wwwroot/css/icons.css",
       "wwwroot/css/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/popper.js/umd/popper.min.js",
+    "inputFiles": [
+      "wwwroot/popper.js/umd/popper.js"
     ]
   }
 ]

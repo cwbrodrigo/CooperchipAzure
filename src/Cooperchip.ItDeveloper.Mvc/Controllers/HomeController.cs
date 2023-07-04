@@ -4,31 +4,42 @@ using System.Diagnostics;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
-    public class HomeController : Controller
+    [Route("/")]
+    [Route("pagina-inicial")]
+    public class HomeController : BaseController
     {
+        #region Constructor + Properties
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
+        #endregion
 
+        [Route("index")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Route("")]
+        [Route("dashboard")]
+        [Route("quadro-analitico")]
         public IActionResult Dashboard()
         {
             return View();
         }
 
-
+        [Route("privacidade")]
+        [Route("politica-de-privacidade")]
         public IActionResult Privacy()
         {
             return View();
         }
 
+        [Route("erros")]
+        [Route("controle-de-erros")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
