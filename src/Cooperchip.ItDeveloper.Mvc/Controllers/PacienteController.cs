@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
+
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
     [Route("")]
@@ -16,10 +18,15 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View(pacientes);
         }
 
-        [HttpGet("detalhe-de-paciente/{id}")]
-        public IActionResult DetalhePaciente(Guid id)
+        //[Route("detalhe-de-paciente/{id}")]
+        [HttpGet("detalhe-de-paciente/{nome}")]
+        public IActionResult DetalhePaciente(string nome)
         {
-            return View();
+            var paciente = ObterPacientes().FirstOrDefault(x => x.Nome == nome);
+
+            if (paciente is null) return NotFound();
+
+            return View(paciente);
         }
 
         [HttpPost("adicionar-paciente")]
@@ -77,7 +84,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             Id = Guid.NewGuid();
             Telefones = new HashSet<Telefone>();
         }
-        protected Guid Id { get; set; }
+        public Guid Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }
         public ICollection<Telefone> Telefones { get; set; }
@@ -90,7 +97,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         {
             Id = Guid.NewGuid();
         }
-        protected Guid Id { get; set; }
+        public Guid Id { get; set; }
         public string? TipoDeTelefone { get; set; }
         public string? Numero { get; set; }
     }

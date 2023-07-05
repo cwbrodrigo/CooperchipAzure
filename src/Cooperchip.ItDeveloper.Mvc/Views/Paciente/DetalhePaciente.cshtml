@@ -1,0 +1,70 @@
+﻿@using Cooperchip.ItDeveloper.Mvc.Controllers;
+@model Paciente
+
+<h3>Detalhe do Pacientes</h3>
+
+<div>
+    <p>
+        Where can I get some?
+
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum
+    </p>
+</div>
+
+<div class="row">
+    <div class="panel panel-body">
+        <div class="col-12">
+            <form asp-controller="Paciente" asp-action="AdicionarPaciente">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="Id" value="@Model.Id" id="Id" />
+
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            <h3>Dados Cadastrais</h3>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><b>Id do Paciente:</b> <span style="font-size: 18px; color:#ed5353; font-stretch:expanded">@Model.Id</span></li>
+                        <li><b>Id do Paciente:</b> <span style="font-size: 18px; color:#ed5353; font-stretch:expanded"></span>@Model.Nome</li>
+                        <li><b>Id do Paciente:</b> <span style="font-size: 18px; color:#ed5353; font-stretch:expanded"></span>@Model.Cpf</li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="panel panel-success">
+                        <div class="panel panel-heading">
+                            <h3>Telefones do Paciente</h3>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id do Telefone</th>
+                                <th>Tipo de Telefone</th>
+                                <th>Número</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Telefones)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.TipoDeTelefone</td>
+                                    <td>@item.Numero</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="form-group">
+                        <a href="javascript:viud()" class="btn btn-warning">Editar telefone</a>
+                        <a class="btn btn-primary" asp-controller="Paciente" asp-action="Index" class="btrr btn-primary">Voltar a tela inicial</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
