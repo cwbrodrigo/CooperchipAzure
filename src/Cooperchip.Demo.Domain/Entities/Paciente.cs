@@ -1,16 +1,16 @@
-﻿using Cooperchip.Demo.Domain.Enums;
+﻿using Cooperchip.Demo.Domain.Entities.Base;
+using Cooperchip.Demo.Domain.Enums;
 
 namespace Cooperchip.Demo.Domain.Entities
 {
-    public class Paciente
+    public class Paciente : BaseEntity
     {
         public Paciente()
         {
-            this.Id = Guid.NewGuid();
             this.Ativo = true;
             EstadoPaciente = new EstadoPaciente();
         }
-        public Guid Id { get; set; }
+        
         public Guid EstadoPacienteId { get; set; }
         public virtual EstadoPaciente EstadoPaciente { get; set; }
         public string? Nome { get; set; }
@@ -25,5 +25,7 @@ namespace Cooperchip.Demo.Domain.Entities
         public string? RgOrgao { get; set; }
         public string? EgDataEmissao { get; set; }
         public string? Motivo { get; set; }
+
+        
     }
 }

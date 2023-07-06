@@ -1,13 +1,13 @@
-﻿namespace Cooperchip.Demo.Domain.Entities
+﻿using Cooperchip.Demo.Domain.Entities.Base;
+
+namespace Cooperchip.Demo.Domain.Entities
 {
-    public class EstadoPaciente
+    public class EstadoPaciente : BaseEntity
     {
         public EstadoPaciente()
         {
-            this.Id = Guid.NewGuid();
             Pacientes = new HashSet<Paciente>();
         }
-        public Guid Id { get; set; }
         public string? Descricao { get; set; }
         public virtual ICollection<Paciente> Pacientes { get; set; }
     }
