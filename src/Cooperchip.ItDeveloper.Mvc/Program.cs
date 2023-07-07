@@ -1,3 +1,6 @@
+using Cooperchip.Demo.Data.Data.ORM;
+using Microsoft.EntityFrameworkCore;
+
 namespace Cooperchip.ItDeveloper.Mvc
 {
     public class Program
@@ -5,6 +8,9 @@ namespace Cooperchip.ItDeveloper.Mvc
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDb")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

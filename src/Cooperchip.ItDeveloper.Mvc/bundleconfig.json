@@ -23,7 +23,6 @@
   {
     "outputFileName": "wwwroot/bundle/core.min.js",
     "inputFiles": [
-      //"wwwroot/fastclick/fastclick.js",
       "wwwroot/popper.js/umd/popper.js",
       "wwwroot/bootstrap/js/bootstrap.js",
       "wwwroot/js/libs/modernizr.custom.js",
@@ -91,5 +90,5 @@
     "inputFiles": [
       "wwwroot/fastclick/fastclick.js"
     ]
-  
+  }
 ]
