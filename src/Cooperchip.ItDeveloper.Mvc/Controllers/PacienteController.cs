@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Cooperchip.Demo.Domain.Entities;
+using Microsoft.AspNetCore.Mvc;
 using System.Runtime.InteropServices;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
@@ -42,63 +43,46 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                 new Paciente()
                 {
                     Nome = "Rodrigo",
-                    Cpf = "06531506548",
-                    Telefones = new List<Telefone>
-                    {
-                        new Telefone(){ TipoDeTelefone = "Residencial", Numero = "413256985"},
-                        new Telefone(){ TipoDeTelefone = "Comercial", Numero = "4135252565"},
-                        new Telefone(){ TipoDeTelefone = "Celular", Numero = "4198816969"}
-                    }
+                    Cpf = "06531506548"
                 },
                 new Paciente()
                 {
                     Nome = "José",
-                    Cpf = "2589696334",
-                    Telefones = new List<Telefone>
-                    {
-                        new Telefone(){ TipoDeTelefone = "Residencial", Numero = "4145456985"},
-                        new Telefone(){ TipoDeTelefone = "Comercial", Numero = "41365567498"},
-                        new Telefone(){ TipoDeTelefone = "Celular", Numero = "4185898457784"}
-                    }
+                    Cpf = "2589696334"
                 },
                 new Paciente()
                 {
                     Nome = "Maria",
-                    Cpf = "25893214334",
-                    Telefones = new List<Telefone>
-                    {
-                        new Telefone(){ TipoDeTelefone = "Residencial", Numero = "55858589546"},
-                        new Telefone(){ TipoDeTelefone = "Comercial", Numero = "5485465446"},
-                        new Telefone(){ TipoDeTelefone = "Celular", Numero = "84879415465849"}
-                    }
+                    Cpf = "25893214334"
                 }
             };
             return pacientes;
         }
     }
-
-    public class Paciente
-    {
-        public Paciente()
-        {
-            Id = Guid.NewGuid();
-            Telefones = new HashSet<Telefone>();
-        }
-        public Guid Id { get; set; }
-        public string? Nome { get; set; }
-        public string? Cpf { get; set; }
-        public ICollection<Telefone> Telefones { get; set; }
-        //public DateTime DataNascimento { get; set; }
-    }
-
-    public class Telefone
-    {
-        public Telefone()
-        {
-            Id = Guid.NewGuid();
-        }
-        public Guid Id { get; set; }
-        public string? TipoDeTelefone { get; set; }
-        public string? Numero { get; set; }
-    }
 }
+
+//    public class Paciente
+//    {
+//        public Paciente()
+//        {
+//            Id = Guid.NewGuid();
+//            Telefones = new HashSet<Telefone>();
+//        }
+//        public Guid Id { get; set; }
+//        public string? Nome { get; set; }
+//        public string? Cpf { get; set; }
+//        public ICollection<Telefone> Telefones { get; set; }
+//        //public DateTime DataNascimento { get; set; }
+//    }
+
+//    public class Telefone
+//    {
+//        public Telefone()
+//        {
+//            Id = Guid.NewGuid();
+//        }
+//        public Guid Id { get; set; }
+//        public string? TipoDeTelefone { get; set; }
+//        public string? Numero { get; set; }
+//    }
+//}
