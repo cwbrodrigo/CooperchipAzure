@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -12,21 +12,27 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://cooperchipkeys.vault.azure.net/",
+        "AZURE_USERNAME": "rfleischfresser@outlook.com"
       }
     },
     "IIS Staging": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Staging"
+        "ASPNETCORE_ENVIRONMENT": "Staging",
+        "VaultUri": "https://cooperchipkeys.vault.azure.net/",
+        "AZURE_USERNAME": "rfleischfresser@outlook.com"
       }
     },
     "IIS Production": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "VaultUri": "https://cooperchipkeys.vault.azure.net/",
+        "AZURE_USERNAME": "rfleischfresser@outlook.com"
       }
     },
     "Self Host": {
@@ -35,7 +41,9 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7138;http://localhost:5022",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://cooperchipkeys.vault.azure.net/",
+        "AZURE_USERNAME": "rfleischfresser@outlook.com"
       }
     }
   }
