@@ -12,14 +12,15 @@ namespace Cooperchip.Demo.Data.Mappings
 
             builder.Property(x => x.Descricao)
                 .HasColumnType("varchar(30)")
-                .IsRequired()
-                .HasColumnName("Descicao");
+                .HasMaxLength(30)
+                .HasColumnName("Descicao")
+                .IsRequired();
 
             builder.HasMany(x => x.Pacientes)
                 .WithOne(x => x.EstadoPaciente);
+                //.OnDelete(DeleteBehavior.NoAction);
 
             builder.ToTable(nameof(EstadoPaciente));
-                //.OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

@@ -11,31 +11,34 @@ namespace Cooperchip.Demo.Data.Mappings
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Nome)
-                .IsRequired()
                 .HasColumnType("varchar(60)")
-                .HasColumnName("Nome");
+                .HasMaxLength(60)
+                .HasColumnName("Nome")
+                .IsRequired();
 
             builder.Property(x => x.Cpf)
+                .HasColumnType("varchar(11)")
                 .HasMaxLength(11)
                 .IsFixedLength(true)
-                .HasColumnName("CPF")
-                .HasColumnType("varchar(11)");
+                .HasColumnName("CPF");
 
             builder.Property(x => x.RgOrgao)
-                .HasColumnName("RgOrgao")
-                .HasColumnType("varchar(10)");
+                .HasColumnType("varchar(10)")
+                .HasColumnName("RgOrgao");
 
             builder.Property(x => x.Rg)
-                .HasMaxLength(15)
-                .HasColumnType("varchar(15)");
+                .HasColumnType("varchar(15)")
+                .HasMaxLength(15);
 
             builder.Property(x => x.Email)
-                .HasColumnName("Email")
-                .HasColumnType("varchar(150)");
+                .HasColumnType("varchar(150)")
+                .HasMaxLength(150)
+                .HasColumnName("Email");
 
             builder.Property(x => x.Motivo)
-                .HasColumnName("Motivo")
-                .HasColumnType("varchar(90)");
+                .HasColumnType("varchar(90)")
+                .HasMaxLength(90)
+                .HasColumnName("Motivo");
 
             builder.HasOne(x => x.EstadoPaciente)
                 .WithMany(x => x.Pacientes)
