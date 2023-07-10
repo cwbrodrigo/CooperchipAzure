@@ -23,7 +23,7 @@ namespace Cooperchip.Demo.Domain.Entities
         public Sexo Sexo { get; set; }
         public string? Rg { get; set; }
         public string? RgOrgao { get; set; }
-        public string? EgDataEmissao { get; set; }
+        public string? RgDataEmissao { get; set; }
         public string? Motivo { get; set; }
 
         
