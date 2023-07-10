@@ -62,9 +62,7 @@
 </head>
 
 <body>
-
-    @await Html.PartialAsync("PartialViews/_navbar")
-
+    <partial name="PartialViews/_navbar" />
 
     <!-- #wrapper -->
     <div id="wrapper">
@@ -81,9 +79,7 @@
 
                     <div class="side-nav">
                         <ul class="nav">
-
                             <partial name="PartialViews/_lis_do_menu_left" />
-
                         </ul>
                     </div>
 
@@ -94,8 +90,7 @@
             </div>
 
         </aside>
-
-        @await Html.PartialAsync("PartialViews/_rightsidebar")
+        <partial name="PartialViews/_rightsidebar" />
 
         <!-- .page-content -->
         <div class="page-content sidebar-page right-sidebar-page clearfix">
