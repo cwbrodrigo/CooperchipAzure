@@ -7,6 +7,14 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:AzureDb",
       "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/cooperchipdatabasedbserver.database.wind_0260EA039B",
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/cooperchipdatabasedbserver/databases/Cooperchip.DataBase",
+      "type": "mssql.azure",
+      "connectionId": "cooperchipdatabasedbserver.database.windows.net",
+      "dynamicId": null
     }
   }
 }
