@@ -23,6 +23,11 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View(model);
         }
 
+        public IActionResult Create()
+        {
+            return View();  
+        }
+
         public async Task<IActionResult> Details(Guid? id)
         {
             try
@@ -37,50 +42,63 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             }
         }
 
-        public IActionResult Create()
-        {
-            return View();
-        }
+        [HttpGet("Edit/{id}")]
+        public async Task<IActionResult> Edit(Guid id) => (IActionResult)await _context.EstadoPaciente.FindAsync(id);
+        //{
+        //    try
+        //    {
+        //        var model = await _context.EstadoPaciente.FindAsync(id);
 
-        [HttpGet("Ediat/{id}")]
-        public async Task<IActionResult> Edit(Guid id)
+        //        return View(model);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"Erro - {ex.Message}");
+        //    }
+        //}
+        #endregion
+
+        #region POST/PUT METHODS
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([Bind("Descricao")] EstadoPaciente model)
         {
             try
             {
-                var model = await _context.EstadoPaciente.FindAsync(id);
+                if (_context.EstadoPaciente.Any(x => x.Id == model.Id))
+                    return BadRequest("Esse estado de paciente ja existe");
 
-                return View(model);
+                EstadoPaciente estadoPaciente = new EstadoPaciente
+                {
+                    Descricao = model.Descricao
+                };
+                await _context.AddAsync(estadoPaciente);
+
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro - {ex.Message}");
             }
         }
-        #endregion
-
-        #region POST METHODS
-        [HttpPost("adicionar-estado-paceinte")]
+        [HttpPut]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Descricao")] EstadoPaciente estadoPaciente)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Descricao, Id")] EstadoPaciente estadoPaciente)
         {
             try
             {
+                if (id != estadoPaciente.Id)
+                    return NotFound();
+
                 if (ModelState.IsValid)
                 {
-                    EstadoPaciente model = new EstadoPaciente
-                    {
-                        Descricao = estadoPaciente.Descricao
-                    };
-
-                    var ret = await _context.Set<EstadoPaciente>().AddAsync(model);
+                    _context.Update(estadoPaciente);
                     await _context.SaveChangesAsync();
-
-                    return RedirectToAction(nameof(Index));
+                    return View(estadoPaciente);
                 }
                 else
-                    return BadRequest("Erro na criação");
+                    return BadRequest("Erro na edição");
             }
-            catch (Exception ex)
+            catch (DbUpdateConcurrencyException ex)
             {
                 return BadRequest($"Erro - {ex.Message}");
             }
