@@ -2,6 +2,7 @@
 using Cooperchip.Demo.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
@@ -28,6 +29,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View();  
         }
 
+        [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(Guid? id)
         {
             try
@@ -56,9 +58,12 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         //        return BadRequest($"Erro - {ex.Message}");
         //    }
         //}
+
+        [HttpGet("Delete/{id}")]
+        public async Task<IActionResult> Delete(Guid id) => (IActionResult)await _context.EstadoPaciente.FindAsync(id);               
         #endregion
 
-        #region POST/PUT METHODS
+        #region POST/PUT/DELETE METHODS
         [HttpPost("Create")]
         public async Task<IActionResult> Create([Bind("Descricao")] EstadoPaciente model)
         {
@@ -80,6 +85,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                 return BadRequest($"Erro - {ex.Message}");
             }
         }
+
         [HttpPut]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Descricao, Id")] EstadoPaciente estadoPaciente)
@@ -99,6 +105,25 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                     return BadRequest("Erro na edição");
             }
             catch (DbUpdateConcurrencyException ex)
+            {
+                return BadRequest($"Erro - {ex.Message}");
+            }
+        }
+
+        [HttpDelete, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirm(Guid id)
+        {
+            try
+            {
+                var model = await _context.EstadoPaciente.FindAsync(id);
+
+                _context.EstadoPaciente.Remove(model);
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
             {
                 return BadRequest($"Erro - {ex.Message}");
             }

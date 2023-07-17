@@ -90,5 +90,13 @@
     "inputFiles": [
       "wwwroot/fastclick/fastclick.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/bundle/jquery-validation.min.js",
+    "inputFiles": [
+      "wwwroot/jquery-validate/additional-methods.js",
+      "wwwroot/jquery-validate/jquery.validate.js",
+      "wwwroot/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    ]
   }
 ]
