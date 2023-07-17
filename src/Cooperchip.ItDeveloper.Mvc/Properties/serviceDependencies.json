@@ -4,6 +4,15 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:AzureDb",
       "dynamicId": null
+    },
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": "VaultUri"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "azurevm",
+      "dynamicId": null
     }
   }
 }

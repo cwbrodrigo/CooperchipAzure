@@ -7,6 +7,20 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:AzureDb",
       "dynamicId": null
+    },
+    "secrets1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/CooperchipKeys",
+      "type": "secrets.keyVault",
+      "connectionId": "VaultUri"
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/brazilsouth/connectors/azurevm_C5D4C4C8A4",
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/vhdstoragejns4j5nia3nsi",
+      "type": "storage.azure",
+      "connectionId": "azurevm",
+      "dynamicId": null
     }
   }
 }
