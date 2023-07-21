@@ -24,17 +24,17 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View(model);
         }
 
+        [HttpGet("Create")]
         public IActionResult Create()
         {
-            return View();  
+            return View();
         }
 
-        [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(Guid? id)
         {
             try
             {
-                var model = _context.EstadoPaciente.FirstOrDefaultAsync(x => x.Id.Equals(id));
+                var model = await _context.EstadoPaciente.FindAsync(id);
 
                 return View(model);
             }
@@ -45,27 +45,39 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         }
 
         [HttpGet("Edit/{id}")]
-        public async Task<IActionResult> Edit(Guid id) => (IActionResult)await _context.EstadoPaciente.FindAsync(id);
-        //{
-        //    try
-        //    {
-        //        var model = await _context.EstadoPaciente.FindAsync(id);
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            try
+            {
+                var model = await _context.EstadoPaciente.FindAsync(id);
 
-        //        return View(model);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest($"Erro - {ex.Message}");
-        //    }
-        //}
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro - {ex.Message}");
+            }
+        }
 
         [HttpGet("Delete/{id}")]
-        public async Task<IActionResult> Delete(Guid id) => (IActionResult)await _context.EstadoPaciente.FindAsync(id);               
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                var model = await _context.EstadoPaciente.FindAsync(id);
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro - {ex.Message}");
+            }
+        }
         #endregion
 
         #region POST/PUT/DELETE METHODS
-        [HttpPost("Create")]
-        public async Task<IActionResult> Create([Bind("Descricao")] EstadoPaciente model)
+        [HttpPost("CreatePost")]
+        public async Task<IActionResult> CreatePost([Bind("Descricao")] EstadoPaciente model)
         {
             try
             {
@@ -77,6 +89,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                     Descricao = model.Descricao
                 };
                 await _context.AddAsync(estadoPaciente);
+                await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -86,20 +99,19 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPost("EditPut/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Descricao, Id")] EstadoPaciente estadoPaciente)
+        public async Task<IActionResult> EditPut([Bind("Descricao, Id")] EstadoPaciente estadoPaciente, Guid Id)
         {
             try
             {
-                if (id != estadoPaciente.Id)
-                    return NotFound();
-
                 if (ModelState.IsValid)
                 {
-                    _context.Update(estadoPaciente);
+                    var model = await _context.EstadoPaciente.FirstOrDefaultAsync(x => x.Id.Equals(Id));
+                    model.Descricao = estadoPaciente.Descricao;
+                    _context.Update(model);
                     await _context.SaveChangesAsync();
-                    return View(estadoPaciente);
+                    return RedirectToAction(nameof(Index));
                 }
                 else
                     return BadRequest("Erro na edição");
@@ -110,7 +122,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             }
         }
 
-        [HttpDelete, ActionName("Delete")]
+        [HttpDelete, ActionName("DeleteConfirm/{id}")]
         public async Task<IActionResult> DeleteConfirm(Guid id)
         {
             try

@@ -2,13 +2,11 @@
   "dependencies": {
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:AzureDb",
-      "dynamicId": null
+      "connectionId": "AzureDb"
     },
     "mssql2": {
       "type": "mssql",
-      "connectionId": "cooperchipdatabasedbserver.database.windows.net",
-      "dynamicId": null
+      "connectionId": "AzureDataBase"
     }
   }
 }

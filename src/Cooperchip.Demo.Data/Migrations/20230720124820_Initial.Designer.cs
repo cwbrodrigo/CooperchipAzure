@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cooperchip.Demo.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230708185649_Initial")]
+    [Migration("20230720124820_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Cooperchip.Demo.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.8")
+                .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -32,11 +32,14 @@ namespace Cooperchip.Demo.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("Descicao");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EstadoPaciente");
+                    b.ToTable("EstadoPaciente", (string)null);
                 });
 
             modelBuilder.Entity("Cooperchip.Demo.Domain.Entities.Paciente", b =>
@@ -49,7 +52,10 @@ namespace Cooperchip.Demo.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Cpf")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(11)
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("CPF")
+                        .IsFixedLength();
 
                     b.Property<DateTime>("DataInternacao")
                         .HasColumnType("datetime2");
@@ -57,26 +63,35 @@ namespace Cooperchip.Demo.Data.Migrations
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EgDataEmissao")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("Email");
 
                     b.Property<Guid>("EstadoPacienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Motivo")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(90)
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("Motivo");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("Nome");
 
                     b.Property<string>("Rg")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(90)");
+
+                    b.Property<string>("RgDataEmissao")
+                        .HasColumnType("varchar(90)");
 
                     b.Property<string>("RgOrgao")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(90)")
+                        .HasColumnName("RgOrgao");
 
                     b.Property<int>("Sexo")
                         .HasColumnType("int");
@@ -88,7 +103,7 @@ namespace Cooperchip.Demo.Data.Migrations
 
                     b.HasIndex("EstadoPacienteId");
 
-                    b.ToTable("Paciente");
+                    b.ToTable("Paciente", (string)null);
                 });
 
             modelBuilder.Entity("Cooperchip.Demo.Domain.Entities.Paciente", b =>
@@ -96,7 +111,6 @@ namespace Cooperchip.Demo.Data.Migrations
                     b.HasOne("Cooperchip.Demo.Domain.Entities.EstadoPaciente", "EstadoPaciente")
                         .WithMany("Pacientes")
                         .HasForeignKey("EstadoPacienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("EstadoPaciente");

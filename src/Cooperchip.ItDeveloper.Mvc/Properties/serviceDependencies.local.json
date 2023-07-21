@@ -1,20 +1,18 @@
 {
   "dependencies": {
     "mssql1": {
-      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/ConnectionStringsAzureDb_1DDC585097",
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/AzureDb_7F8ABEA019",
       "secretStore": "LocalSecretsFile",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/cooperchipdatabasedbserver/databases/Cooperchip.DataBase",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/cooperchipdbserver/databases/Cooperchip.ItDeveloper.Mvc_db",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:AzureDb",
-      "dynamicId": null
+      "connectionId": "AzureDb"
     },
     "mssql2": {
-      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/cooperchipdatabasedbserver.database.wind_0260EA039B",
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/AzureDataBase_648D7C4318",
       "secretStore": "LocalSecretsFile",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/cooperchipdatabasedbserver/databases/Cooperchip.DataBase",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/cooperchipdbserver/databases/CopperchipDb",
       "type": "mssql.azure",
-      "connectionId": "cooperchipdatabasedbserver.database.windows.net",
-      "dynamicId": null
+      "connectionId": "AzureDataBase"
     }
   }
 }

@@ -7,6 +7,7 @@
 <partial name="PartialViews/_cabecalho" />
 
 <div class="panel panel-success panel-controls">
+
     <div class="panel panel-heading">
         <h3>Editar Estado do Paciente</h3>
     </div>
@@ -15,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+            <form asp-controller="EstadoPaciente" asp-action="EditPut" asp-route-id="@Model.Id" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Descricao" class="control-label"></label>
@@ -23,7 +24,7 @@
                     <span asp-validation-for="Descricao" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Editar" class="btn btn-info" />
+                    <input type="submit" value="Editar" class="btn btn-primary" />
                 </div>
             </form>
         </div>
@@ -35,6 +36,6 @@
 
 @section Scripts {
     @{
-        await Html.RenderPartialAsync("__ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial", Model);
     }
 }
