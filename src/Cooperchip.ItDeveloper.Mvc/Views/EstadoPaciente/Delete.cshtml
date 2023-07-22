@@ -17,15 +17,15 @@
     <div class="panel panel-body">
         <dl class="dl-horizontal">
             <dt>
-                <label for="@Model.Descricao"></label>
+                @Html.DisplayNameFor(x => x.Descricao)
             </dt>
             <dd>
-                <label asp-for="Descricao"></label>
+                @Html.DisplayFor(x => x.Descricao)
             </dd>
         </dl>
-        <form asp-controller="EstadoPaciente" asp-action="Delete" asp-route-id="@Model.Id">
+        <form asp-controller="EstadoPaciente" asp-action="DeleteConfirm" asp-route-id="@Model.Id" method="post">
             <input type="submit" class="btn btn-danger" value="Deletar" />
-            <a class="btn btn-default" asp-controller="EstadoPaciente" asp-action="Index">Voltar para Lista</a>
+            <a class="btn btn-primary" asp-controller="EstadoPaciente" asp-action="Index">Voltar para Lista</a>
         </form>
     </div>
 

@@ -122,7 +122,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             }
         }
 
-        [HttpDelete, ActionName("DeleteConfirm/{id}")]
+        [HttpPost("DeleteConfirm/{id}")]
         public async Task<IActionResult> DeleteConfirm(Guid id)
         {
             try
