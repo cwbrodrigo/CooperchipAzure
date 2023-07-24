@@ -1,4 +1,4 @@
-
+﻿
 
 
 <!doctype html>
@@ -17,7 +17,7 @@
     <meta name="application-name" content="" />
 
     <link href="~/bundle/core.min.css" rel="stylesheet" />
-
+    <link href="~/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet" />
     <!-- Css files -->
     <!-- ESTILOS PERSONALIZADOS Carlos /-->
     <link href="/css/cooperchip/notes.css" rel="stylesheet" />
@@ -62,7 +62,9 @@
 </head>
 
 <body>
-    <partial name="PartialViews/_navbar" />
+
+    @await Html.PartialAsync("PartialViews/_navbar")
+
 
     <!-- #wrapper -->
     <div id="wrapper">
@@ -79,7 +81,9 @@
 
                     <div class="side-nav">
                         <ul class="nav">
+
                             <partial name="PartialViews/_lis_do_menu_left" />
+
                         </ul>
                     </div>
 
@@ -90,7 +94,8 @@
             </div>
 
         </aside>
-        <partial name="PartialViews/_rightsidebar" />
+
+        @await Html.PartialAsync("PartialViews/_rightsidebar")
 
         <!-- .page-content -->
         <div class="page-content sidebar-page right-sidebar-page clearfix">
@@ -115,10 +120,12 @@
         <a href="#">Voltar para o Topo</a>
     </div>
 
-    <partial name="PartialViews/_scripts" defer/>
+    <partial name="PartialViews/_scripts" />
 
+    <script src="~/bundle/dashboard.min.js"></script>
 
     @RenderSection("scripts", required: false)
+
 
 </body>
 </html>

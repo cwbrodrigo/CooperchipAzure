@@ -1,13 +1,5 @@
 [
   {
-    "outputFileName": "wwwroot/bundle/jquery.min.js",
-    "inputFiles": [
-      "wwwroot/js/libs/jquery-2.1.1.min.js",
-      "wwwroot/Scripts/jquery-ui-1.11.2.min.js",
-      "wwwroot/js/jRespond.min.js"
-    ]
-  },
-  {
     "outputFileName": "wwwroot/bundle/firstpage.min.js",
     "inputFiles": [
       "wwwroot/plugins/core/pace/pace.min.js"
@@ -23,15 +15,14 @@
   {
     "outputFileName": "wwwroot/bundle/core.min.js",
     "inputFiles": [
-      "wwwroot/popper.js/umd/popper.js",
-      "wwwroot/bootstrap/js/bootstrap.js",
       "wwwroot/js/libs/modernizr.custom.js",
-      "wwwroot/js/libs/respond.min.js",
-      "wwwroot/plugins/core/slimscroll/jquery.slimscroll.js",
+      "wwwroot/js/jRespond.min.js",
+      "wwwroot/plugins/core/slimscroll/jquery.slimscroll.min.js",
       "wwwroot/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js",
+      "wwwroot/plugins/core/fastclick/fastclick.js",
       "wwwroot/plugins/core/velocity/jquery.velocity.min.js",
-      "wwwroot/plugins/core/quicksearch/jquery.quicksearch.js",
-      "wwwroot/plugins/ui/bootbox/bootbox.js"
+      "wwwroot//plugins/core/quicksearch/jquery.quicksearch.js",
+      "wwwroot//plugins/ui/bootbox/bootbox.js"
     ]
   },
   {
@@ -49,12 +40,12 @@
       "wwwroot/plugins/charts/flot/jquery.flot.curvedLines.js",
       "wwwroot/plugins/charts/sparklines/jquery.sparkline.js",
       "wwwroot/plugins/charts/progressbars/progressbar.js",
-      //"wwwroot/plugins/ui/waypoint/waypoints.js",
-      //"wwwroot/plugins/ui/weather/skyicons.js",
+      "wwwroot/plugins/ui/waypoint/waypoints.js",
+      "wwwroot/plugins/ui/weather/skyicons.js",
       "wwwroot/plugins/ui/notify/jquery.gritter.js",
       "wwwroot/plugins/misc/vectormaps/jquery-jvectormap-1.2.2.min.js",
       "wwwroot/plugins/misc/vectormaps/maps/jquery-jvectormap-world-mill-en.js",
-      //"wwwroot/plugins/misc/countTo/jquery.countTo.js",
+      "wwwroot/plugins/misc/countTo/jquery.countTo.js",
       "wwwroot/js/jquery.dynamic.js",
       "wwwroot/js/main.js",
       "wwwroot/js/pages/dashboard.js"
@@ -77,26 +68,6 @@
       "wwwroot/css/main.css",
       "wwwroot/css/icons.css",
       "wwwroot/css/custom.css"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/popper.js/umd/popper.min.js",
-    "inputFiles": [
-      "wwwroot/popper.js/umd/popper.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/fastclick/fastclick.min.js",
-    "inputFiles": [
-      "wwwroot/fastclick/fastclick.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/bundle/jquery-validation.min.js",
-    "inputFiles": [
-      "wwwroot/jquery-validate/additional-methods.js",
-      "wwwroot/jquery-validate/jquery.validate.js",
-      "wwwroot/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     ]
   }
 ]
