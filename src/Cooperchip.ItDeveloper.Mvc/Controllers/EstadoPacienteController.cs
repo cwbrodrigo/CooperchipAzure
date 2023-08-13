@@ -1,10 +1,4 @@
-﻿using Cooperchip.Demo.Data.Data.ORM;
-using Cooperchip.Demo.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
-
-namespace Cooperchip.ItDeveloper.Mvc.Controllers
+﻿namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
     public class EstadoPacienteController : BaseController
     {

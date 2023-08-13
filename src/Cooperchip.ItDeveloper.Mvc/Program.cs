@@ -32,6 +32,12 @@ namespace Cooperchip.ItDeveloper.Mvc
 
             app.UseAuthorization();
 
+            //builder.Services.AddControllersWithViews()
+            //.AddRazorOptions(options =>
+            //{
+            //    options.ViewLocationFormats.Add("/{0}.cshtml");
+            //});
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Dashboard}/{id?}");
