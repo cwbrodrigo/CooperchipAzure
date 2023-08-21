@@ -2,7 +2,12 @@
     ViewData["Title"] = "Lista de pacientes";
 }
 
-<partial name="PartialViews/_cabecalho" />
+@await Component.InvokeAsync(
+    "Cabecalho",
+new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"}
+)
+
+<partial name="PartialViews/_estado_paceinte" />
 
 <div class="panel panel-success panel-controls">
     <div class="panel panel-heading">

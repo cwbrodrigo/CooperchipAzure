@@ -1,19 +1,17 @@
 ﻿<div class="row">
-
     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-        @* @await Component.InvokeAsync("") *@
+        @await Component.InvokeAsync("StatusPaciente", "Crítico")
     </div>
 
     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-        
+        @await Component.InvokeAsync("StatusPaciente", "Grave")
     </div>
 
     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-        
+        @await Component.InvokeAsync("StatusPaciente", "Em Observação")
     </div>
 
     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-        
+        @await Component.InvokeAsync("StatusPaciente", "Estável")
     </div>
-
 </div>

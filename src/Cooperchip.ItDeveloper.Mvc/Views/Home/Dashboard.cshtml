@@ -5,21 +5,21 @@
 <div class="page-content-wrapper">
     <div class="page-content-inner">
 
-        <partial name="PartialViews/_titlebar" />
+        @await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
+
+        <partial name="PartialViews/_estado_paceinte" />
 
         <div class="panel panel-default panel-controls">
             <div class="panel panel-heading">
                 <h3>Estatísticas e Marcadores em Tempo Real</h3>
             </div>
 
-            <partial name="PartialViews/_cardsbox" />
-
             <div class="panel panel-body">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="col-lg-9 col-sm-9 col-xs-12 p0">
                         <div class="panel panel-default plain btrr0 bbrr0 panelRefresh" data-mh="payments">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><i class="fa fa-dollar"></i> Payment received</h4>
+                                <h4 class="panel-title"><i class="fa fa-dollar"></i> Pagamentos recebidos</h4>
                             </div>
                             <div class="panel-body">
                                 <div id="line-chart-payments" style="width: 100%; height:250px;"></div>
@@ -35,14 +35,14 @@
                                     <div class="spark-info mb0">
                                         <span class="number stats-number money s32" data-from="0" data-to="12857">0</span>
                                     </div>
-                                    <div class="spark-info mtm5">Total income</div>
+                                    <div class="spark-info mtm5">Total recebido</div>
                                 </div>
                                 <div class="spark clearfix">
                                     <div class="spark-info mb0">
                                         <span class="number stats-number money s32 color-gray-light" data-from="0" data-to="4578"></span>
                                     </div>
                                     <div class="sparkline spark-payments mt0"></div>
-                                    <div class="spark-info">Credit Card</div>
+                                    <div class="spark-info">Csrtão de Crédito</div>
                                 </div>
                                 <div class="spark clearfix">
                                     <div class="spark-info mb0">
@@ -61,30 +61,11 @@
                     <!-- col-lg-3 end here -->
                 </div>
                 <!-- col-lg-8 end here -->
-                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    <!-- col-lg-4 start here -->
-                    <div class="panel panel-default plain">
-                        <!-- Start .panel -->
-                        <div class="panel-heading">
-                            <h4 class="panel-title"><i class="glyphicon glyphicon-user"></i> Customer experience</h4>
-                        </div>
-                        <div class="panel-body">
-                            <div class="text-center">
-                                <div id="customer-exp" class="custom-progressbar blue" style="width:244px;height:244px;">
-                                    <div class="percent">
-                                        80<span>%</span>
-                                    </div>
-                                    <div class="description">satisfaction</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End .panel -->
-                </div>
+                @await Component.InvokeAsync("ExperienciaUsuario")
                 <!-- col-lg-4 end here -->
             </div>
             <!-- End .row -->
-            <div class="row">
+           @*  <div class="row">
                 <!-- Start .row -->
                 <div class="col-lg-8 col-md-12">
                     <!-- col-lg-8 start here -->
@@ -165,7 +146,7 @@
                             <div class="panel panel-default plain toggle panelClose panelRefresh">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="l-basic-target"></i> Montly Sales Goals</h4>
+                                    <h4 class="panel-title"><i class="l-basic-target"></i> Metas Mensais de Vendas</h4>
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
@@ -295,7 +276,7 @@
                     <div class="panel panel-default plain toggle panelMove panelClose panelRefresh">
                         <!-- Start .panel -->
                         <div class="panel-heading">
-                            <h4 class="panel-title"><i class="fa fa-comments"></i>Customer Comments</h4>
+                            <h4 class="panel-title"><i class="fa fa-comments"></i> Comentários</h4>
                         </div>
                         <div class="panel-body">
                             <ul class="list-group recent-comments">
@@ -345,7 +326,7 @@
                     <!-- End .panel -->
                 </div>
                 <!-- col-lg-4 end here -->
-            </div>
+            </div> *@
             <!-- End .row -->
         </div>
     </div>
