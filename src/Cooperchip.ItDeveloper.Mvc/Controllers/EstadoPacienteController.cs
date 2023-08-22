@@ -1,5 +1,6 @@
 ﻿namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
+    [Route(nameof(EstadoPacienteController))]
     public class EstadoPacienteController : BaseController
     {
         #region CONSTRUCTOR - PROPERTIES
@@ -12,9 +13,11 @@
         #endregion
 
         #region GET METHODS
+        [HttpGet("GetAll")]
         public async Task<IActionResult> Index()
         {
             var model = await _context.EstadoPaciente.ToListAsync();
+
             return View(model);
         }
 
@@ -24,6 +27,7 @@
             return View();
         }
 
+        [HttpGet("GetByid/{id}")]
         public async Task<IActionResult> Details(Guid? id)
         {
             try

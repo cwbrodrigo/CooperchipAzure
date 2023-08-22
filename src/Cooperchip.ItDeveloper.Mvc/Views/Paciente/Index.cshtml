@@ -1,16 +1,75 @@
 ﻿@{
-    ViewData["Title"] = "Lista de pacientes";
+    @using Cooperchip.Demo.Domain.Entities;
+    @model IEnumerable<PacienteViewModel>
+    ViewData["Title"] = "Lista de Estado de Paciente";
 }
 
-@await Component.InvokeAsync(
-    "Cabecalho",
-new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"}
-)
+@await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
 
-<partial name="PartialViews/_estado_paceinte" />
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-controls">
 
-<div class="panel panel-success panel-controls">
-    <div class="panel panel-heading">
-        <h3>Lista de Pacientes</h3>
+            <div class="panel panel-success">
+                <div class="panel panel-heading">
+                    <h3>Lista de Estado do Paciente</h3>
+                </div>
+            </div>
+
+            <div class="panel panel-body">
+                <p>
+                    <a class="btn btn-primary" asp-controller="Paciente" asp-action="Create"><i class="fa-solid fa-plus"></i> Adicionar</a>
+                </p>
+
+                <div class="row col-12">
+
+                    @if (Model.Count() > 0)
+                    {
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td scope="row">@item.Id</td>
+                                        <td>@item.Nome</td>
+                                        <td>
+                                            <a class="btn btn-primary" asp-controller="Paciente" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i> Detalhes</a>
+                                            <a class="btn btn-info" asp-controller="Paciente" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                                            <a class="btn btn-danger" asp-controller="Paciente" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i> Excluir</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Ação</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    }
+                    else
+                    {
+                        <span style="margin-left: 25px;">Nenhum Item</span>
+                    }
+                </div>
+            </div>
+
+            <div class="panel panel-footer">
+                <a asp-controller="Paciente" asp-action="Index" class="btn btn-default">Voltar para Lista</a>
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/bundle/datatables.min.js" defer></script>
+}

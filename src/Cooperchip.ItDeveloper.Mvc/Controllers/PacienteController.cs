@@ -1,17 +1,22 @@
-﻿using Azure.Core;
+﻿using Cooperchip.Demo.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
+    [Route(nameof(PacienteController))]
     public class PacienteController : BaseController
     {
         #region CONSTRUCOTR
         private readonly ApplicationDbContext _context;
         private readonly ILogger _logger;
+        IEnumerable<EstadoPaciente> estadoPacientes;
 
-        public PacienteController(ApplicationDbContext context) => _context = context;
+        public PacienteController(ApplicationDbContext context)
+        {
+            _context = context;
+            estadoPacientes = _context.EstadoPaciente.AsNoTracking().ToList();
+        }
         #endregion
 
         #region GET METHODS
@@ -22,14 +27,15 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                             .Include(x => x.EstadoPaciente)
                             .AsNoTracking()
                             .ToListAsync();
+            List<PacienteViewModel> viewModel = new List<PacienteViewModel>();
 
-            if (model is null)
-                return View();
-
-            List<PacienteViewModel> viewModel = await MapListModelToListViewModel(model);
+            if (model is not null)
+                viewModel = await MapListModelToListViewModel(model);
 
             return View(viewModel);
         }
+
+
 
         [HttpGet("GetByid/{id}")]
         public async Task<IActionResult> Details(Guid id)
@@ -48,6 +54,49 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         }
 
         [HttpGet("GetByEstadoPaciente/{id}")]
+
+        [HttpGet("Create")]
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.EstadoPaciente = new SelectList(estadoPacientes.Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Descricao)), "Key", "Value");
+
+            return View();
+        }
+
+        [HttpGet("Edit/{id}")]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            try
+            {
+                var model = await _context.Paciente.FindAsync(id);
+                ViewBag.EstadoPaciente = new SelectList(estadoPacientes.Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Descricao)), "Key", "Value");
+
+                var viewModel = await MapModelToViewModel(model);
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro - {ex.Message}");
+            }
+        }
+
+        [HttpGet("Delete/{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                var model = await _context.Paciente.FindAsync(id);
+
+                var viewModel = await MapModelToViewModel(model);
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro - {ex.Message}");
+            }
+        }
 
         public async Task<IActionResult> GetByEstadoPaciente(Guid id)
         {
@@ -69,10 +118,12 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
 
         #region POST METHODS
         [HttpPost("CreatePost")]
-        public async Task<IActionResult> CreatePost([FromBody] Paciente paciente)
+        public async Task<IActionResult> CreatePost(PacienteViewModel pacienteViewModel)
         {
             if (ModelState.IsValid)
             {
+                Paciente paciente = await MapViewModelToModel(pacienteViewModel);
+                paciente.EstadoPaciente = null;
                 await _context.Set<Paciente>().AddAsync(paciente);
                 await _context.SaveChangesAsync();
 
@@ -116,7 +167,30 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         #endregion
 
         #region: Mappers
-        private async Task<PacienteViewModel> MapModelToViewModel(Paciente model)
+        private async Task<Paciente> MapViewModelToModel(PacienteViewModel model)
+        {
+            Paciente paciente = new()
+            {
+                Id = model.Id,
+                Ativo = model.Ativo,
+                Cpf = model.Cpf,
+                DataInternacao = model.DataInternacao,
+                DataNascimento = model.DataNascimento,
+                Email = model.Email,
+                EstadoPacienteId = model.EstadoPacienteId,
+                Motivo = model.Motivo,
+                Nome = model.Nome,
+                Rg = model.Rg,
+                RgDataEmissao = model.RgDataEmissao,
+                RgOrgao = model.RgOrgao,
+                Sexo = model.Sexo,
+                TipoPaciente = model.TipoPaciente
+            };
+
+            return await Task.FromResult(paciente);
+        }
+
+        private async Task<PacienteViewModel> MapModelToViewModel(Paciente? model)
         {
             PacienteViewModel pacienteViewModel = new()
             {
@@ -139,7 +213,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return await Task.FromResult(pacienteViewModel);
         }
 
-        private async Task<List<PacienteViewModel>> MapListModelToListViewModel(List<Paciente> model)
+        private async Task<List<PacienteViewModel>> MapListModelToListViewModel(List<Paciente>? model)
         {
             List<PacienteViewModel> listView = new();
 

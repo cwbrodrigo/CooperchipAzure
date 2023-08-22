@@ -11,7 +11,7 @@ namespace Cooperchip.ItDeveloper.Mvc
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDataBase")));
-
+            builder.Services.AddScoped<ApplicationDbContext>();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
@@ -38,9 +38,7 @@ namespace Cooperchip.ItDeveloper.Mvc
             //    options.ViewLocationFormats.Add("/{0}.cshtml");
             //});
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Dashboard}/{id?}");
+            app.MapDefaultControllerRoute();
 
             app.Run();
         }

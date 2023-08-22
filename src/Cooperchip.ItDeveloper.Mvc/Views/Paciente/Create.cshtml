@@ -1,0 +1,107 @@
+﻿@using Cooperchip.Demo.Domain.Enums;
+@model PacienteViewModel
+
+@await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
+
+<div class="panel panel-controls">
+
+    <div class="panel panel-heading" style="background-color: #74C22A">
+        <h3>Adicionar Paciente</h3>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12" style="margin-left: 10px">
+            <form asp-controller="Paciente" asp-action="CreatePost" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Nome" class="control-label"></label>
+                        <input asp-for="Nome" class="form-control" type="text" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DataNascimento" class="control-label"></label>
+                        <input asp-for="DataNascimento" class="form-control" type="date" />
+                        <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DataInternacao" class="control-label"></label>
+                        <input asp-for="DataInternacao" class="form-control" type="date" />
+                        <span asp-validation-for="DataInternacao" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" type="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Cpf" class="control-label"></label>
+                        <input asp-for="Cpf" class="form-control" type="text" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TipoPaciente" class="control-label"></label>
+                        <select asp-for="TipoPaciente" asp-items="Html.GetEnumSelectList<TipoPaciente>()" class="form-control">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="TipoPaciente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sexo" class="control-label"></label>
+                        <select asp-for="Sexo" asp-items="Html.GetEnumSelectList<Sexo>()" class="form-control">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="Sexo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EstadoPacienteId" class="control-label"></label>
+                        <select asp-for="EstadoPacienteId" asp-items="@ViewBag.EstadoPaciente" class="form-control">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="EstadoPacienteId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    
+                    <div class="form-group">
+                        <label asp-for="Rg" class="control-label"></label>
+                        <input asp-for="Rg" class="form-control" type="text" />
+                        <span asp-validation-for="Rg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RgOrgao" class="control-label"></label>
+                        <input asp-for="RgOrgao" class="form-control" type="text" />
+                        <span asp-validation-for="RgOrgao" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RgDataEmissao" class="control-label"></label>
+                        <input asp-for="RgDataEmissao" class="form-control" type="date" />
+                        <span asp-validation-for="RgDataEmissao" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-top: 40px">
+                        <label asp-for="Ativo"></label>
+                        <input asp-for="Ativo" type="checkbox" style="margin-left: 15px" />
+                    </div>
+                </div>
+                <div class="form-group pull-right col-md-4">
+                    <input type="submit" value="Adicionar" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-footer">
+        <div>
+            <a asp-controller="Paciente" asp-action="GetAll" class="btn btn-primary">Voltar para Lista</a>
+        </div>
+    </div>
+</div>
