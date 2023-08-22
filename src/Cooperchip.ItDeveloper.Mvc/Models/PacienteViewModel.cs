@@ -78,7 +78,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Models
         [DisplayName("Data de Emissão do RG")]
         [MaxLength(10, ErrorMessage = "O capo {0} deve ter no máximo {1} caracteres")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida")]
-        public DateTime RgDataEmissao { get; set; }
+        public string? RgDataEmissao { get; set; }
 
         [MaxLength(90, ErrorMessage = "O capo {0} deve ter no máximo {1} caracteres")]
         public string? Motivo { get; set; }
