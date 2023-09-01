@@ -10,7 +10,7 @@ namespace Cooperchip.ItDeveloper.Mvc
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDataBase")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDb")));
             builder.Services.AddScoped<ApplicationDbContext>();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
