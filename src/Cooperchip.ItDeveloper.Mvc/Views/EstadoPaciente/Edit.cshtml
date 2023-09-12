@@ -4,11 +4,11 @@
     ViewData["Title"] = "Editar Estado do Paciente";
 }
 
-<partial name="PartialViews/_cabecalho" />
+@await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
 
-<div class="panel panel-success panel-controls">
+<div class="panel col-md-4 panel-controls">
 
-    <div class="panel panel-heading">
+    <div class="panel panel-heading" style="background-color: #74C22A">
         <h3>Editar Estado do Paciente</h3>
     </div>
 

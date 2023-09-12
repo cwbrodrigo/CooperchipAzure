@@ -1,11 +1,6 @@
-﻿using Cooperchip.Demo.Data.Data.ORM;
-using Cooperchip.Demo.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
-
-namespace Cooperchip.ItDeveloper.Mvc.Controllers
+﻿namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
+    [Route(nameof(EstadoPacienteController))]
     public class EstadoPacienteController : BaseController
     {
         #region CONSTRUCTOR - PROPERTIES
@@ -18,9 +13,11 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         #endregion
 
         #region GET METHODS
+        [HttpGet("GetAll")]
         public async Task<IActionResult> Index()
         {
             var model = await _context.EstadoPaciente.ToListAsync();
+
             return View(model);
         }
 
@@ -30,6 +27,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View();
         }
 
+        [HttpGet("GetByid/{id}")]
         public async Task<IActionResult> Details(Guid? id)
         {
             try

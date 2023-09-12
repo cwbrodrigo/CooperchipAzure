@@ -1,0 +1,31 @@
+﻿@{
+    @model Paciente
+    ViewData["Title"] = "Exclusão de Estado do Paciente";
+}
+
+@await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
+
+<div class="panel col-md-4 panel-controls">
+
+    <div class="panel panel-heading" style="background-color: #74C22A">
+        <h3>Exclusão de Estado do Paciente</h3>
+    </div>
+
+    <h3>Está certo que deseja remover esse registro?</h3>
+
+    <div class="panel panel-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(x => x.Nome)
+            </dt>
+            <dd>
+                @Html.DisplayFor(x => x.Nome)
+            </dd>
+        </dl>
+        <form asp-controller="EstadoPaciente" asp-action="DeleteConfirm" asp-route-id="@Model.Id" method="post">
+            <input type="submit" class="btn btn-danger" value="Deletar" />
+            <a class="btn btn-primary" asp-controller="EstadoPaciente" asp-action="Index">Voltar para Lista</a>
+        </form>
+    </div>
+
+</div>

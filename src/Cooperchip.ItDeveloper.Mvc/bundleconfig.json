@@ -49,12 +49,9 @@
       "wwwroot/plugins/charts/flot/jquery.flot.curvedLines.js",
       "wwwroot/plugins/charts/sparklines/jquery.sparkline.js",
       "wwwroot/plugins/charts/progressbars/progressbar.js",
-      //"wwwroot/plugins/ui/waypoint/waypoints.js",
-      //"wwwroot/plugins/ui/weather/skyicons.js",
       "wwwroot/plugins/ui/notify/jquery.gritter.js",
       "wwwroot/plugins/misc/vectormaps/jquery-jvectormap-1.2.2.min.js",
       "wwwroot/plugins/misc/vectormaps/maps/jquery-jvectormap-world-mill-en.js",
-      //"wwwroot/plugins/misc/countTo/jquery.countTo.js",
       "wwwroot/js/jquery.dynamic.js",
       "wwwroot/js/main.js",
       "wwwroot/js/pages/dashboard.js"
@@ -97,6 +94,50 @@
       "wwwroot/jquery-validate/additional-methods.js",
       "wwwroot/jquery-validate/jquery.validate.js",
       "wwwroot/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundle/bootstrapTable.min.js",
+    "inputFiles": [
+      "wwwroot/bootstrap-table/bootstrap-table.js",
+      "wwwroot/bootstrap-table/bootstrap-table-locale-all.js",
+      "wwwroot/bootstrap-table/extensions/addrbar/bootstrap-table-addrbar.js",
+      "wwwroot/bootstrap-table/extensions/auto-refresh/bootstrap-table-auto-refresh.js",
+      "wwwroot/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js",
+      "wwwroot/bootstrap-table/extensions/copy-rows/bootstrap-table-copy-rows.js",
+      "wwwroot/bootstrap-table/extensions/custom-view/bootstrap-table-custom-view.js",
+      "wwwroot/bootstrap-table/extensions/defer-url/bootstrap-table-defer-url.js",
+      "wwwroot/bootstrap-table/extensions/editable/bootstrap-table-editable.js",
+      "wwwroot/bootstrap-table/extensions/export/bootstrap-table-export.js",
+      "wwwroot/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js",
+      "wwwroot/bootstrap-table/extensions/filter-control/utils.js",
+      "wwwroot/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.js",
+      "wwwroot/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.js",
+      "wwwroot/bootstrap-table/extensions/i18n-enhance/bootstrap-table-i18n-enhance.js",
+      "wwwroot/bootstrap-table/extensions/key-events/bootstrap-table-key-events.js",
+      "wwwroot/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js",
+      "wwwroot/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.js",
+      "wwwroot/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.js",
+      "wwwroot/bootstrap-table/extensions/pipeline/bootstrap-table-pipeline.js",
+      "wwwroot/bootstrap-table/extensions/print/bootstrap-table-print.js",
+      "wwwroot/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.js",
+      "wwwroot/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.js",
+      "wwwroot/bootstrap-table/extensions/resizable/bootstrap-table-resizable.js",
+      "wwwroot/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.js",
+      "wwwroot/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.js",
+      "wwwroot/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundle/bootstrapTable.min.css",
+    "inputFiles": [
+      "wwwroot/bootstrap-table/bootstrap-table.css",
+      "wwwroot/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.css",
+      "wwwroot/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.css",
+      "wwwroot/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.css",
+      "wwwroot/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.css",
+      "wwwroot/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.css",
+      "wwwroot/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.css"
     ]
   }
 ]

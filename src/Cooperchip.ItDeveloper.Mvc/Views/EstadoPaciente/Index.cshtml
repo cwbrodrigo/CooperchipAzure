@@ -4,7 +4,7 @@
     ViewData["Title"] = "Lista de Estado de Paciente";
 }
 
-<partial name="PartialViews/_cabecalho" />
+@await Component.InvokeAsync("Cabecalho", new { title = "Dashboard", subTitle="Estatísticas e Marcadores do Sistema"})
 
 <div class="container">
     <div class="panel-group">
@@ -59,15 +59,13 @@
                     }
                     else
                     {
-                        <span>Nenhum Item</span>
+                        <span style="margin-left: 25px;">Nenhum Item</span>
                     }
                 </div>
             </div>
 
-            <div class="panel panel-info">
-                <div class="panel panel-footer">
-                    <a asp-controller="EstadoPaciente" asp-action="Index" class="btn btn-default">Voltar para Lista</a>
-                </div>
+            <div class="panel panel-footer">
+                <a asp-controller="EstadoPaciente" asp-action="Index" class="btn btn-default">Voltar para Lista</a>
             </div>
         </div>
     </div>
