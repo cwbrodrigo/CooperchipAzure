@@ -20,7 +20,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         #endregion
 
         #region GET METHODS
-        [HttpGet("GetAll")]
+        [HttpGet("Index")]
         public async Task<IActionResult> Index()
         {
             var model = await _context.Paciente
