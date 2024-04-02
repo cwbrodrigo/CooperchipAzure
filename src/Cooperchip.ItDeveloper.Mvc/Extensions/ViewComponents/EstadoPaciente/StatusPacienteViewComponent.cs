@@ -1,4 +1,6 @@
-﻿namespace Cooperchip.ItDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
+﻿using Cooperchip.ItDeveloper.Mvc.Extensions.Utils;
+
+namespace Cooperchip.ItDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
 {
     [ViewComponent(Name = "StatusPaciente")]
     public class StatusPacienteViewComponent : ViewComponent
@@ -12,9 +14,9 @@
 
         public async Task<IViewComponentResult> InvokeAsync(string estado)
         {
-            int totalGeral = Utils.TotReg(_context);
+            int totalGeral = Utilities.Utils.TotReg(_context);
 
-            decimal totalEstado = Utils.GetNumReg(_context, estado);
+            decimal totalEstado = Utilities.Utils.GetNumReg(_context, estado);
 
             decimal progress = (totalGeral > 0) ? totalEstado * 100 / totalGeral : 0;
 

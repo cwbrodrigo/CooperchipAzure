@@ -1,5 +1,7 @@
 using Cooperchip.Demo.Data.Data.ORM;
+using Cooperchip.ItDeveloper.Mvc.Extensions.Repository;
 using Microsoft.EntityFrameworkCore;
+using static Cooperchip.ItDeveloper.Mvc.Extensions.Utils.Utilities;
 
 namespace Cooperchip.ItDeveloper.Mvc
 {
@@ -12,6 +14,7 @@ namespace Cooperchip.ItDeveloper.Mvc
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDb")));
             builder.Services.AddScoped<ApplicationDbContext>();
+            builder.Services.AddSingleton<IUtilities, Mappers>();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

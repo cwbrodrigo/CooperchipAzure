@@ -1,6 +1,6 @@
 ﻿namespace Cooperchip.ItDeveloper.Mvc.Extensions.Helpers
 {
-    public static class Utils
+    public static class _Utils
     {
         public static int TotReg(ApplicationDbContext context)
         {

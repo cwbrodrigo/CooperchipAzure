@@ -1,5 +1,4 @@
-﻿using Cooperchip.Demo.Data.Mappings;
-using Cooperchip.Demo.Domain.Entities;
+﻿using Cooperchip.Demo.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cooperchip.Demo.Data.Data.ORM
